@@ -29,6 +29,7 @@ public class Events {
 	private int teamsize;
 	private int totalteams;
 	private String url;
+	private int fees;
 	@OneToMany(mappedBy = "event",cascade = CascadeType.ALL)
 	@JsonIgnore
 	private List<RegisteredEvents> list;
@@ -73,6 +74,12 @@ public class Events {
 	}
 	public void setList(List<RegisteredEvents> list) {
 		this.list = list;
+	}
+	public int getFees() {
+		return fees;
+	}
+	public void setFees(int fees) {
+		this.fees = fees;
 	}
 	
 }

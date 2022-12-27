@@ -65,7 +65,9 @@ public class AdminController {
 	}
 
 	@RequestMapping("/saveads")
-	public String saveimage(@RequestParam String email, @RequestParam("file") CommonsMultipartFile file,
+	public String saveimage(@RequestParam("email") String email, 
+			@RequestParam("file") CommonsMultipartFile file,
+			@RequestParam("url") String url,
 			HttpSession session, Model m) throws Exception {
 		ServletContext context = session.getServletContext();
 		Advertisment adv=new Advertisment();
@@ -83,7 +85,8 @@ public class AdminController {
 			stream.flush();
 			stream.close();
 			adv.setEmail(email);
-			adv.setUrl(imgpath+filename);
+			adv.setImg(imgpath+filename);
+			adv.setUrl(url);
 			adv.setStatus(AdvertismentHelper.ACTIVE);
 			adsrepo.save(adv);
 			m.addAttribute("msg", "Advertisment added succesfully");

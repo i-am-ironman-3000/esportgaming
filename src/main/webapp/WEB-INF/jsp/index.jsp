@@ -16,7 +16,7 @@
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
 
   <!-- 
     - google font link
@@ -30,13 +30,13 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
 
   <!-- 
     - preload images
   -->
-  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
-  <link rel="preload" as="image" href="./assets/images/hero-banner-bg.png">
+  <link rel="preload" as="image" href="/assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="/assets/images/hero-banner-bg.png">
 
 </head>
 
@@ -109,9 +109,9 @@
           
 
           <div class="hero-banner">
-            <img src="./assets/images/hero-banner.png" width="850" height="414" alt="hero banner" class="w-100">
+            <img src="/assets/images/hero-banner.png" width="850" height="414" alt="hero banner" class="w-100">
 
-            <img src="./assets/images/hero-banner-bg.png" alt="" class="hero-banner-bg">
+            <img src="/assets/images/hero-banner-bg.png" alt="" class="hero-banner-bg">
           </div>
 
         </div>
@@ -649,7 +649,7 @@
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/script.js"></script>
+  <script src="/assets/js/script.js"></script>
 
   <!-- 
     - ionicon link

@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -31,6 +33,10 @@ public class UserModel {
 	private String number;
 	private String role;
 	private String usertype;
+	@ManyToOne
+	@JsonIgnore
+	@JoinColumn(name="team_id")
+	private Teams team;
 	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
 	@JsonIgnore
 	private List<MessageModel> message;
@@ -92,5 +98,10 @@ public class UserModel {
 		this.usertype = usertype;
 	}
 	
-	
+	public Teams getTeam() {
+		return this.team;
+	}
+	public void setTeam(Teams team) {
+		this.team=team;
+	}
 }

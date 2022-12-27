@@ -40,6 +40,9 @@
                     <input type="text" name="email" class="form-control"/></div>
                     <div class="form-group">
                     <input type="file" name="file" class="form-control"/></div>
+                    <div class="form-group">
+                    <input type="text" name="url" class="form-control"/></div>
+                    
                     <input type="submit" value="Upload File" class="btn btn-success" />
                 </form>
             </div>

@@ -42,7 +42,7 @@ public class MainController {
 		return "login";
 	}
 	@RequestMapping("/home")
-	public String homePage(Principal p) {
+	public String homePage(Principal p,Model m) {
 		UserModel user=userv.findByEmail(p.getName());
 		if(user.getRole().equals("ROLE_ADMIN"))
 			return "redirect:/admin/home";

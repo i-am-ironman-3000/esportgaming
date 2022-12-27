@@ -21,7 +21,15 @@ public class Advertisment {
 	private int id;
 	private String email;
 	private String url;
+	private String img;
 	private AdvertismentHelper status;
+	
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
 	public int getId() {
 		return id;
 	}
