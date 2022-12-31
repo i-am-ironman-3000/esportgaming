@@ -9,14 +9,14 @@
   <!-- 
     - primary meta tags
   -->
-  <title>Unigine - Epic Games Made For True Gamers!</title>
-  <meta name="title" content="Unigine - Epic Games Made For True Gamers!">
-  <meta name="description" content="This is an esports and gaming html template made by codewithsadee">
+  <title>ESN media</title>
+  <meta name="title" content="ESN media!">
+  <meta name="description" content="this website is made by vaibhav mishra">
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/assets/images/icon.png">
 
   <!-- 
     - google font link
@@ -50,7 +50,7 @@
     <div class="container">
 
       <a href="#home" class="logo">
-        <img src="./assets/images/logo.svg" width="110" height="53" alt="unigine home">
+        <img src="/assets/images/icon.png" width="110" height="53" alt="unigine home">
       </a>
 
       <nav class="navbar" data-navbar>
@@ -69,7 +69,10 @@
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="navbar-link" data-nav-link>contact</a>
+            <a href="#contact" class="navbar-link" data-nav-link>contact</a>
+          </li>
+           <li class="navbar-item">
+            <a href="#aboutus" class="navbar-link" data-nav-link>About us</a>
           </li>
 
         </ul>
@@ -483,8 +486,105 @@
     </article>
   </main>
 
+  <!-- 
 
+    contact
+  -->
+  <section class="contact" id="contact">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat non consequuntur, voluptatem minima et magnam similiq</p>
+        
+        </div>
+        <div class="container2">
+            <div class="containerInfo">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>22/13c Pitamber Nagar <br>Teliyargang Prayagraj<br> Uttar Pradesh pin-224508</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>+918115955921</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>mauryaalok@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm2">
+                <form action="/message" method="post" class="footer-form" style="width:400px;height:200px;margin: 0 auto;">
+            <input type="message" name="message" required placeholder="Your message" autocomplete="off"
+              class="input-field">
 
+            <button type="submit" class="btn" data-btn>Send Now</button>
+          </form>
+            </div>
+        </div>
+
+    </section>
+
+<section class="subhead" id="aboutus">
+    <h1>ABOUT US</h1>
+    <h2>WE ARE AN ESPORTS AND GAMING ORGANISATION</h2>
+    <p>As a leading metaverse and creator economy platform at the intersection of<br> gaming culture, Upthrust Esports was founded in April,2020. At Upthrust, we create<br> opportunities that empower creators, energize players, and entertain fans. With our enthusiastic<br> &vibrant team,
+       we excel at making real & meaningful impact in the esports community.</p>
+    
+  </section>
+  <section class="do">
+    <h1>WHAT WE DO</h1>
+    <div class="row">
+      <div class="do-col">
+        <h3>ONLINE GAMING EVENTS</h3>
+        <p>Upthrust provides you with the most thrilling & exciting events of all time. We comply with audience demands and organize the best
+           tournaments which enhance the gaming level to the new heights.</p>
+
+      </div>
+      <div class="do-col">
+        <h3>PRODUCTION MANAGEMENT</h3>
+        <p>We at Upthrust believe that the people behind the screens are the backbone of any event that goes towards success. Thus we work with the most energetic people around who impart an extra spark to the 
+          work, providing you with the best production for any kind of event.</p>
+
+      </div>
+    </div>
+
+  </section>
+  <!-- 
+    - #what we offer
+
+  -->
+  <section class="offer">
+    <h1>WHAT WE OFFER</h1>
+    <div class="row">
+      <div class="do-col1">
+        <h3>TALENT MANAGEMENT</h3>
+        <p>Our team brings extensive experience in representing Esports talent including content creators, Esports athletes and personalities.Comprised of pro management skills, we are equipped to handle all of our clients’ needs. 
+          We are pursuant to our commitment to provide a turnkey experience</p>
+
+      </div>
+      <div class="do-col1">
+        <h3>BRAND ENGAGEMENT</h3>
+        <p>Upthrust brings a wealth of experience in helping connect brands within the Esports industry. We focus on forging partnerships that share a strategic vision and are a proper fit for both the brand and Esports entity or personality.Impressions and related statistics are an important equation in the way we form our partnerships, but we believe 
+          it is important to find a strategic partner for our sponsors.</p>
+
+      </div>
+      <div class="do-col1">
+        <h3>PRODUCT MARKETING</h3>
+        <p>In the field of product marketing, to enhance the product dealing, the requirement of the clientele is the primary priority at upthrust. Upthrust offers one of such product marketing services that prioritize on the satisfaction of the customers. Our team and executives give special importance in understanding the customer requirements so as to deliver 
+          the high potential services demanded in the market to the clients.</p>
+
+      </div>
+    </div>
+
+  </section>
 
 
   <!-- 
@@ -499,7 +599,7 @@
         <div class="footer-brand">
 
           <a href="#" class="logo">
-            <img src="./assets/images/logo.svg" width="150" height="73" loading="lazy" alt="Unigine logo">
+            <img src="./assets/images/icon.png" width="100" height="60" loading="lazy" alt="Unigine logo">
           </a>
 
           <p class="footer-text">
@@ -515,19 +615,19 @@
             </li>
 
             <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
+              <a href="https://discord.gg/EAjxYFG4" class="social-link" target="blank">
+                <ion-icon name="logo-discord"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
+              <a href="https://instagram.com/esportsnation.official?igshid=NTdlMDg3MTY=" class="social-link" target="blank">
                 <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
 
             <li>
-              <a href="#" class="social-link">
+              <a href="https://youtube.com/@Esportsnation.Official" class="social-link" target="blank">
                 <ion-icon name="logo-youtube"></ion-icon>
               </a>
             </li>
@@ -581,7 +681,7 @@
           <div class="contact-item">
             <span class="span">Join Us:</span>
 
-            <a href="mailto:Info@unigine.com" class="contact-link">Info@unigine.com</a>
+            <a href="mailto:esportsnationofficial@gmail.com" class="contact-link">esportsnationofficial@gmail.com</a>
           </div>
 
           <div class="contact-item">
@@ -612,7 +712,7 @@
       <div class="container">
 
         <p class="copyright">
-          &copy; 2022 codewithsadee All Rights Reserved.
+          &copy; 2022 vaibhav All Rights Reserved.
         </p>
 
       </div>

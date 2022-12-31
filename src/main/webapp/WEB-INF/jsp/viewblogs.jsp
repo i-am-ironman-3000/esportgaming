@@ -29,12 +29,12 @@
                         <c:if test="${pageno>0}">
                         <a href="/admin/allblogs/${pageno-1}" class="btn btn-info float-left">Previous</a>
                         </c:if>
-                        <c:if test="${pageno<total-1}">
+                        <c:if test="${pageno<total}">
                         <a href="/admin/allblogs/${pageno+1}" class="btn btn-info float-left">next</a>
                         </c:if>
             </div>
             <div class="col-sm-6">
-                <form action="addblog" method="post" enctype="multipart/form-data">
+                <form action="/admin/addblog" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                     <input type="text" name="content" class="form-control"/></div>
                     <div class="form-group">

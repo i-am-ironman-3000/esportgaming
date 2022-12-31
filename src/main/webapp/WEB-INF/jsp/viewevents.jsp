@@ -5,6 +5,7 @@
             <h1>Advertisment page</h1>
         </div>
         <div class="row">
+         ${pageno}<br>${total}
             <div class="col-sm-6">
                 <table class="table">
                     <thead>
@@ -13,6 +14,7 @@
                             <td>name</td>
                             <td>id</td>
                             <td>Time</td>
+                            
                             <td>action</td>
                         </tr>
                     </thead>
@@ -23,16 +25,18 @@
                         <td><h5>${img.name}</h5></td>
                         <td><h5>${img.id}</h5></td>
                         <td>${img.date}</td>
-                        <td><a href="/admin/deleteevent/${img.id}" class="btn btn-sm btn-danger">Delete</a></td>
+                        <td><a href="/admin/deleteevent/${img.id}" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="/admin/viewevent/${img.id}" class="btn btn-sm btn-danger">view</a>
+                        </td>
                     </tr>
                 </c:forEach>
             </tbody>
                 </table>
-                        <c:if test="${pageno>0}">
+                        <c:if test="${pageno>=0}">
                         <a href="/admin/allevent/${-pageno}" class="btn btn-info float-left">Previous</a>
                         </c:if>
-                        <c:if test="${pageno<total-1}">
-                        <a href="/admin/allevent/${pageno+1}" class="btn btn-info float-left">next</a>
+                        <c:if test="${pageno<total}">
+                        <a href="/admin/allevent/${pageno+1}" class="btn btn-info float-right">next</a>
                         </c:if>
             </div>
             <div class="col-sm-6">

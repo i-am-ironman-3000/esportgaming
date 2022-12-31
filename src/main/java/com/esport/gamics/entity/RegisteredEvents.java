@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name="register",uniqueConstraints = @UniqueConstraint(columnNames = {"email","events_id"}))
+@Table(name="register")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,29 +28,16 @@ public class RegisteredEvents {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String email;
+	private String members;
 	@ManyToOne
 	@JsonIgnore
 	@JoinColumn(name="events_id")
 	private Events event;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public Events getEvent() {
-		return event;
-	}
-	public void setEvent(Events event) {
-		this.event = event;
-	}
+	@ManyToOne
+	@JsonIgnore
+	@JoinColumn(name="team_id")
+	private Teams team;
+	
 	
 	
 }

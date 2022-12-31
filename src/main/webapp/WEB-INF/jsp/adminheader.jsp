@@ -19,6 +19,7 @@
         width: 200px;
         height: 200px;
         max-width: 200px;
+        background-blend-mode: lighten;
     }
   </style>
   </head>

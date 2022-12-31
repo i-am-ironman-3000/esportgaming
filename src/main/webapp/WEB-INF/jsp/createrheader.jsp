@@ -9,8 +9,8 @@
   <!-- 
     - primary meta tags
   -->
-  <title>ESN media</title>
-  <meta name="title" content="ESN media">
+  <title>Unigine - Epic Games Made For True Gamers!</title>
+  <meta name="title" content="ESN Media - Epic Games Made For True Gamers!">
   <meta name="description" content="this website is made by vaibhav mishra">
 
   <!-- 
@@ -50,18 +50,14 @@
     <div class="container">
 
       <a href="/user/home" class="logo">
-        <img src="/assets/images/icon.png" width="110" height="53" alt="ESN media">
+        <img src="/assets/images/icon.png" width="110" height="53" alt="unigine home">
       </a>
 
       <nav class="navbar" data-navbar>
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <a href="/user/home" class="navbar-link" data-nav-link>home</a>
-          </li>
-
-          <li class="navbar-item">
-            <a href="/tournament" class="navbar-link" data-nav-link>tournament</a>
+            <a href="/creater/home" class="navbar-link" data-nav-link>home</a>
           </li>
 
           <li class="navbar-item">
@@ -73,9 +69,6 @@
           </li>
           <li class="navbar-item">
             <a href="/about" class="navbar-link" data-nav-link>About</a>
-          </li>
-          <li class="navbar-item">
-            <a href="/user/team" class="navbar-link" data-nav-link>Team</a>
           </li>
           <li class="navbar-item">
             <a href="/logout" class="navbar-link" data-nav-link>logout</a>

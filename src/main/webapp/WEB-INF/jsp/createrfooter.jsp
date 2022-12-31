@@ -123,7 +123,7 @@
       <div class="container">
 
         <p class="copyright">
-          &copy; 2022 vaibhav mishra All Rights Reserved.
+          &copy; 2022 codewithsadee All Rights Reserved.
         </p>
 
       </div>

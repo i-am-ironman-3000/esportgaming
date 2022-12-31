@@ -1,105 +1,56 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-        <jsp:include page="userheader.jsp" />
-        
-        <!-- 
-        - #BRAND
-      -->
+  <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    <jsp:include page="userheader.jsp" />
+    ${msg}
 
-      <section class="section brand" aria-label="brand">
+      <!-- 
+        - #LATEST GAME
+      -->
+      <section class="section latest-game" aria-label="latest game">
         <div class="container">
-          <h1 class="sponsors skewBg">
-            OUR SPONSORS
-          </h1>
 
           <ul class="has-scrollbar">
 
-            <li class="brand-item">
-              <img src="/assets/images/brand-1.png" width="90" height="90" loading="lazy" alt="brand logo">
-            </li>
+            <li class="scrollbar-item">
+              <div class="latest-game-card">
 
-            <li class="brand-item">
-              <img src="/assets/images/brand-2.png" width="90" height="90" loading="lazy" alt="brand logo">
-            </li>
+                <figure class="card-banner img-holder">
+                  <img src="${event.url}" width="400" height="470" loading="lazy"
+                    alt="White Walker Daily" class="img-cover">
+                </figure>
 
-            <li class="brand-item">
-              <img src="/assets/images/brand-3.png" width="90" height="90" loading="lazy" alt="brand logo">
-            </li>
+                <div class="card-content">
 
-            <li class="brand-item">
-              <img src="/assets/images/brand-4.png" width="90" height="90" loading="lazy" alt="brand logo">
-            </li>
+                  <a href="#" class="card-badge skewBg">${event.name}</a>
 
-            <li class="brand-item">
-              <img src="/assets/images/brand-5.png" width="90" height="90" loading="lazy" alt="brand logo">
-            </li>
-
-            <li class="brand-item">
-              <img src="/assets/images/brand-6.png" width="90" height="90" loading="lazy" alt="brand logo">
-            </li>
-
-            <li class="brand-item">
-              <img src="./assets/images/brand-1.png" width="90" height="90" loading="lazy" alt="brand logo">
-            </li>
-            <li class="brand-item">
-              <img src="/assets/images/brand-1.png" width="90" height="90" loading="lazy" alt="brand logo">
+                  <h3 class="h3">
+                    <a href="#" class="card-title">${event.name} <span class="span">${event.name}</span></a>
+                  </h3>
+                  <p class="card-price">
+                    Entry Fee : <span class="span">${event.fees>0?evetn.fees:"free"}</span>
+                  </p>
+                  <div class="container" style="margin-top: 20px;margin-bottom: 2px;">
+                    <h4 style="margin-top: 20px;margin-bottom: 20px;">Select members to rewgister(only ${event.teamsize} members)</h4>
+                    <form method="post" action="/user/reg/${event.id}"class="footer-form">
+                      <select name="members" id="countries" multiple>
+                        <c:forEach items="${members}" var="member">
+                          <option value="${member.id}">${member.name}</option>
+                        </c:forEach>
+                    </select>
+                    <input type="submit" value="register" class="btn" style="margin-top: 20px;margin-bottom: 2px;">
+                    </form>
+                  </div>
+                </div>
+                
+              </div>
             </li>
           </ul>
-
+          <script>
+          new MultiSelectTag('countries', {
+            rounded: true,    // default true
+            shadow: true      // default false
+        })
+</script>
         </div>
       </section>
-      ${msg}
-      <div class="section-wrapper">
-
-        <!-- 
-          - #LATEST GAME
-        -->
-${check}
-        <section class="section latest-game" aria-label="latest game">
-          <div class="container">
-
-            <ul class="has-scrollbar">
-
-              <li class="scrollbar-item">
-                <div class="latest-game-card">
-
-                  <figure class="card-banner img-holder">
-                    <img src="${event.url}" width="400" height="470" loading="lazy"
-                      alt="White Walker Daily" class="img-cover">
-                  </figure>
-
-                  <div class="card-content">
-
-                    <a href="#" class="card-badge skewBg">${event.name}</a>
-
-                    <h3 class="h3">
-                      <a href="#" class="card-title">${event.name} <span class="span">${event.name}</span></a>
-                    </h3>
-
-                    <p class="card-price">
-                      Entry Fee : <span class="span">${event.fees}</span>
-                    </p>
-                    <c:if test="${!check}">
-                    	<form action="reg" method="post" class="footer-form">
-                    <input type="text" value="${event.id}" name="id" hidden>
-            <c:forEach items="${emails}" var="email">
-              <input type="email" name="email_address" required placeholder="${email}" autocomplete="off"
-              class="input-field">
-              </c:forEach>
-            <input type="submit" class="btn" value="Register now" data-btn>
-            </form>
-                    </c:if>
-                    <c:if test="${check}">
-                    <button class="btn" data-btn>Already registered</button>
-                    </c:if>
-                  </div>
-
-                </div>
-              </li>
-
-            </ul>
-
-          </div>
-        </section>
-        </div>
-        <jsp:include page="userfooter.jsp" />
+    <jsp:include page="userfooter.jsp" />

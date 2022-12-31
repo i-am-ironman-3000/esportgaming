@@ -10,6 +10,4 @@ import com.esport.gamics.entity.RegisteredEvents;
 @Repository
 public interface Registrationrepo extends JpaRepository<RegisteredEvents, Integer>{
 
-	List<RegisteredEvents> findByEmail(String name);
-
 }

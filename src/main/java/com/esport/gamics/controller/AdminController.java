@@ -10,10 +10,11 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -28,11 +29,14 @@ import com.esport.gamics.entity.Advertisment;
 import com.esport.gamics.entity.Blogs;
 import com.esport.gamics.entity.Brands;
 import com.esport.gamics.entity.Events;
+import com.esport.gamics.entity.RegisteredEvents;
+import com.esport.gamics.entity.UserModel;
 import com.esport.gamics.helper.AdvertismentHelper;
 import com.esport.gamics.repository.AdvertismentRepo;
 import com.esport.gamics.repository.BlogsRepo;
 import com.esport.gamics.repository.BrandRepo;
 import com.esport.gamics.repository.EventsRepo;
+import com.esport.gamics.repository.UserRepository;
 import com.esport.gamics.service.UserService;
 
 @Controller
@@ -48,7 +52,8 @@ public class AdminController {
 	EventsRepo erepo;
 	@Autowired
 	BrandRepo brandrepo;
-	
+	@Autowired
+	UserRepository urepo;
 	@RequestMapping("/home")
 	public String homePage() {
 		return "admin-home";
@@ -166,7 +171,7 @@ public class AdminController {
 	public String allblogs(@PathVariable int offset,@RequestParam(defaultValue = "10") String size,Model m) {
 		m.addAttribute("pageno",offset);
 		m.addAttribute("total", brepo.count()/Integer.parseInt(size));
-		m.addAttribute("allblogs", brepo.findAll(PageRequest.of(offset,Integer.parseInt(size))).get().toList());
+		m.addAttribute("blogs", brepo.findAll(PageRequest.of(offset,Integer.parseInt(size))).get().toList());
 		return "viewblogs";
 	}
 	
@@ -202,6 +207,20 @@ public class AdminController {
 		e.setUrl(imgpath+filename);
 		erepo.save(e);
 		return "redirect:/admin/event";
+	}
+	@RequestMapping("/viewevent/{id}")
+	public String viewEvent(@PathVariable int id,Model m){
+		Events e=erepo.findById(id).get();
+			List<RegisteredEvents> re=e.getList();
+			List<UserModel> users=new ArrayList<UserModel>();
+			for(RegisteredEvents r:re){
+				String[]tmp=r.getMembers().split(",");
+				for(String x:tmp){
+					if(x!=null)users.add(urepo.findById(Integer.parseInt(x)).get());
+				}
+			}
+			m.addAttribute("regusers", users);
+		return "viewevent";
 	}
 	@RequestMapping("/deleteevent/{id}")
 	public String deleteevent(@PathVariable int id) {

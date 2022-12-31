@@ -20,6 +20,9 @@ public class Teams {
 	@OneToMany(mappedBy = "team",cascade = CascadeType.ALL)
 	@JsonIgnore
 	private List<UserModel> list;
+	@OneToMany(mappedBy = "team",cascade = CascadeType.ALL)
+	@JsonIgnore
+	private List<RegisteredEvents> events;
 	public int getId() {
 		return id;
 	}
@@ -37,6 +40,12 @@ public class Teams {
 	}
 	public void setList(List<UserModel> list) {
 		this.list = list;
+	}
+	public List<RegisteredEvents> getEvents() {
+		return events;
+	}
+	public void setEvents(List<RegisteredEvents> events) {
+		this.events = events;
 	}
 	
 	

@@ -2,25 +2,13 @@
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     <%@ page import="java.util.*" %>
         <jsp:include page="userheader.jsp" />
-        
-        <!-- 
-        - #BRAND
-      -->
-
-
-
 
 <div class="section-wrapper">
-<section class="section latest-game" aria-label="latest game">
-          <div class="container">
 
-            <p class="section-subtitle">Latest Releases</p>
-
-            <h2 class="h2 section-title">
-              Create & <span class="span">Manage</span>
-            </h2>
-
-             <%
+        <!-- 
+          - #LATEST GAME
+        -->
+        <%
                       HashMap<Integer,Boolean> map=(HashMap<Integer,Boolean>)session.getAttribute("regevent");
                       pageContext.setAttribute("map", map);
                     %>
@@ -35,7 +23,7 @@ ${msg}
                 <div class="latest-game-card">
 
                   <figure class="card-banner img-holder">
-                    <img src="${event.url}" width="400" height="470" loading="lazy"
+                    <img src="${event.url}" loading="lazy"
                       alt="White Walker Daily" class="img-cover">
                   </figure>
 
@@ -58,9 +46,6 @@ ${msg}
 					 <a href="#" class="btn" data-btn>Registeration closed</a>
 					 </c:if>
            </c:if>
-           <%
-           session.invalidate();
-           %>
            <c:if test="${map[event.id]}">
            <a href="#" class="btn" data-btn>Already registered</a>
            </c:if>
@@ -78,7 +63,11 @@ ${msg}
 
           </div>
         </section>
-          </div>
-        </section>
+        <c:if test="${m>0}">
+        <a href="/event/${m-1}" class="btn" style="float:left;">previous</a>
+        </c:if>
+        <c:if test="${m<total}">
+        <a href="/event/${m+1}" class="btn" style="float:right;">next</a>
+        </c:if>
         </div>
         <jsp:include page="userfooter.jsp" />
