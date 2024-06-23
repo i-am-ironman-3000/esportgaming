@@ -15,6 +15,7 @@ public class GamingworldApplication extends SpringBootServletInitializer{
 	}
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		System.out.println("First changes");
 		return application.sources(GamingworldApplication.class);
 	}
 	@Bean
